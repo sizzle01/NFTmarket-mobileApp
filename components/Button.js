@@ -28,11 +28,29 @@ style={{
   )
 }
  
-export const RectButton = () => {
+export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
     return (
-      <View>
-        <Text>Button</Text>
-      </View>
+        <TouchableOpacity
+        style={{
+          backgroundColor: COLORS.primary,
+          padding: SIZES.small,
+          borderRadius: SIZES.extraLarge,
+          minWidth: minWidth,
+          ...props,
+        }}
+        onPress={handlePress}
+      >
+        <Text
+          style={{
+            fontWeight: 'bold',
+            fontSize: fontSize,
+            color: COLORS.white,
+            textAlign: "center",
+          }}
+        >
+          Place a bid
+        </Text>
+      </TouchableOpacity>
     )
   }
    
